@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+xss:
+  # true为启用XSS安全防护
+  enabled: true
+
+  # 清理策略
+  cleaner:
+    # 清理策略名称(唯一标识)
+    - cleaner-name: modeXSSCleaner
+      # 清理策略类型(在Spring中如果声明了一个Bean名称和清理策略名称一样, 可不配置)
+      # cleaner-class:
+      # 自定义扩展属性
+      property:
+        mode: escape
+        enableEscape: false
+
+  # 过滤器
+  filter:
+    # 过滤器名称(唯一标识)
+    - filter-name: httpRequestMessageXSSHandler
+      # 过滤器类型(在Spring中如果声明了一个Bean名称和过滤器名称一样, 可不配置)
+      # filter-class:
+      # 过滤器路径匹配规则, 如果是字符串, 可以通过逗号分割, 定义多个路径匹配规则
+      url-patterns: /**
+      # 自定义扩展属性
+      init-param:
+      # 要引用的清理策略名, 如果配置了 cleaner 节点, 优先使用 cleaner节点中的清理策略
+      cleaner-ref: modeXSSCleaner
+      # 参考清理策略配置, 如果配置了 cleaner 节点, 优先使用 cleaner节点中的清理策略
+      # cleaner
