@@ -3,7 +3,7 @@ package com.github.xsssecurity.config;
 
 import org.springframework.lang.Nullable;
 
-import java.util.Enumeration;
+import java.util.Collection;
 
 /**
  * XSS 安全防护配置
@@ -25,14 +25,14 @@ public interface XSSConfig {
      *
      * @return 清理策略名称列举
      */
-    Enumeration<String> getCleanerNames();
+    Collection<String> getCleanerNames();
 
     /**
      * 获取过滤器名称列举
      *
      * @return 过滤器名称列举
      */
-    Enumeration<String> getFilterNames();
+    Collection<String> getFilterNames();
 
     /**
      * 获取清理策略配置

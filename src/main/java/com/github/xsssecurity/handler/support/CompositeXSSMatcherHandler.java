@@ -16,7 +16,7 @@ import java.util.List;
  * @author Tao.Gan
  * @date 2023/11/29
  */
-public class CompositeXSSHandler implements XSSHandler {
+public class CompositeXSSMatcherHandler implements XSSHandler {
     private final List<XSSMatcherHandler> handlers = new ArrayList<>();
 
     @Override

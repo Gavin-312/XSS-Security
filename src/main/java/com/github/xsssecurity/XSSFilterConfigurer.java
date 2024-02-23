@@ -9,12 +9,14 @@ import com.github.xsssecurity.config.map.YamlXSSConfigFactory;
 import com.github.xsssecurity.handler.XSSHandlerMapping;
 import com.github.xsssecurity.handler.support.HttpRequestMessageXSSHandler;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
+@ConditionalOnProperty(prefix = "xss", name = "enabled", havingValue = "true")
 public class XSSFilterConfigurer {
 
     @Bean

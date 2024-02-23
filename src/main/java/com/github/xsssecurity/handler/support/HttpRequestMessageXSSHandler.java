@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author Tao.Gan
  * @date 2023/11/29
  */
-public class HttpRequestMessageXSSHandler extends CompositeXSSHandler {
+public class HttpRequestMessageXSSHandler extends CompositeXSSMatcherHandler {
     private HeaderXSSHandlerMatcher headerXSSHandlerMatcher;
 
     @Override

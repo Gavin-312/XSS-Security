@@ -9,7 +9,7 @@ import java.util.Map;
  * @author Tao.Gan
  * @date 2023/12/01
  */
-public class HumpsMap<K, V> extends HashMap<K, V> {
+class HumpsMap<K, V> extends HashMap<K, V> {
     private final String split;
 
     public HumpsMap(Map<K, V> m) {

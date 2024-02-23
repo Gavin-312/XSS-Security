@@ -3,7 +3,7 @@ package com.github.xsssecurity.handler;
 import com.github.xsssecurity.cleaner.XSSCleaner;
 import org.springframework.lang.Nullable;
 
-import java.util.Enumeration;
+import java.util.Collection;
 
 /**
  * XSS 处理程序配置
@@ -34,7 +34,7 @@ public interface XSSHandlerConfig {
      *
      * @return 初始化参数名枚举
      */
-    Enumeration<String> getInitParameterNames();
+    Collection<String> getInitParameterNames();
 
     /**
      * 获取XSS恶意代码清理策略

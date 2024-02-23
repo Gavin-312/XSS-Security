@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -41,15 +41,12 @@ public abstract class XSSConfigHandlerMappingFactory implements XSSHandlerMappin
             return nullMapping;
         }
 
-        Enumeration<String> filterNames = xssConfig.getFilterNames();
-        Assert.isTrue(filterNames != null && filterNames.hasMoreElements(),
-                "filter must not be null and must have elements.");
+        Collection<String> filterNames = xssConfig.getFilterNames();
+        Assert.notEmpty(filterNames, "filter must not be null and must have elements.");
 
         List<XSSHandlerFilterConfigPair> pairs = new ArrayList<>();
 
-        while (filterNames.hasMoreElements()) {
-
-            String filterName = filterNames.nextElement();
+        for (String filterName : filterNames) {
             FilterConfig filterConfig = xssConfig.getFilterConfig(filterName);
             Assert.notNull(filterConfig, filterName + " config must not be null.");
 

@@ -35,13 +35,13 @@ public class MapConfigXSSConfig implements XSSConfig {
     }
 
     @Override
-    public Enumeration<String> getCleanerNames() {
-        return Collections.enumeration(cleanerConfigMap.keySet());
+    public Collection<String> getCleanerNames() {
+        return cleanerConfigMap.keySet();
     }
 
     @Override
-    public Enumeration<String> getFilterNames() {
-        return Collections.enumeration(filtercleanerConfigMap.keySet());
+    public Collection<String> getFilterNames() {
+        return filtercleanerConfigMap.keySet();
     }
 
     @Override

@@ -42,7 +42,7 @@ public class CustomXSSHandlerMapping implements XSSHandlerMapping {
 ```
 
 # 文档
-详细文档可在 [Wiki](https://www.runoob.com) 页面中找到，提供了更多配置选项、自定义扩展示例和最佳实践建议。
+详细文档可在 [Wiki](https://github.com/Gavin-312/XSS-Security/wiki) 页面中找到，提供了更多配置选项、自定义扩展示例和最佳实践建议。
 
 # 贡献
 欢迎贡献代码、提交 bug 报告或提出改进建议。
